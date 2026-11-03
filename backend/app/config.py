@@ -20,8 +20,10 @@ class Settings(BaseSettings):
     embedding_dim: int = 1024
 
     llm_model: str = "claude-sonnet-5-5"
-    llm_temperature: float = 0.2
-    llm_max_tokens: int = 1500
+    # Sonnet 5.5 rejects custom temperature; effort controls depth instead (low | medium | high).
+    llm_effort: str = "medium"
+    # Adaptive thinking counts toward this budget, so leave headroom beyond the visible answer.
+    llm_max_tokens: int = 16000
 
     chunk_size: int = 1000
     chunk_overlap: int = 150

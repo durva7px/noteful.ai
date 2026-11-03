@@ -76,8 +76,8 @@ def get_llm() -> ChatAnthropic:
         raise MissingApiKey("ANTHROPIC_API_KEY is not set in backend/.env")
     return ChatAnthropic(
         model=settings.llm_model,
-        temperature=settings.llm_temperature,
         max_tokens=settings.llm_max_tokens,
+        output_config={"effort": settings.llm_effort},
         api_key=settings.anthropic_api_key,
     )
 
