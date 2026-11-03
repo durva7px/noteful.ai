@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic-settings
+sqlmodel
+langchain-core
+langchain-text-splitters
+langchain-pinecone
+langchain-anthropic
+pinecone
+pypdf
+python-pptx
+docx2txt
+pytest
+httpx
+reportlab
+python-docx
