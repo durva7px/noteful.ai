@@ -29,6 +29,11 @@ def split_documents(docs: list[Document], doc_id: str, filename: str, file_type:
         chunk.metadata.update(
             {"doc_id": doc_id, "filename": filename, "file_type": file_type, "chunk_index": i}
         )
+    print(f"Split {len(docs)} documents into {len(chunks)} chunks")
+    print(f"First chunk metadata: {chunks[0].metadata if chunks else 'N/A'}")
+    print(f"First chunk content: {chunks[0].page_content[:100]}..." if chunks else "N/A")
+    print(f"Fifth chunk metadata: {chunks[5].metadata if chunks else 'N/A'}")
+    print(f"Fifth chunk content: {chunks[5].page_content}..." if len(chunks) > 5 else "N/A")
     return chunks
 
 
